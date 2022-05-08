@@ -5,35 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
-    <title>¡Calculadora!</title>
+    <title>myCalculator!</title>
 </head>
 <body>
+
+<header class="welcome">
+    <h1 id="text"></h1>
+</header>
+
+<div class="flex-container">
     <div id="myCalculatorApp">
         <form class="calculator" name="myCalculator">
             <input type="textfield" name="ans" value="" autocomplete="off" readonly>
 
-            <input type="button" value="7">
-            <input type="button" value="8">
-            <input type="button" value="9">
-            <input type="button" value="+">
+            <input type="button" value="7" onclick="document.myCalculator.ans.value+='7'">
+            <input type="button" value="8" onclick="document.myCalculator.ans.value+='8'">
+            <input type="button" value="9" onclick="document.myCalculator.ans.value+='9'">
+            <input type="button" value="+" class="operation" onclick="document.myCalculator.ans.value+='+'">
 
-            <input type="button" value="4">
-            <input type="button" value="5">
-            <input type="button" value="6">
-            <input type="button" value="-">
+            <input type="button" value="4" onclick="document.myCalculator.ans.value+='4'">
+            <input type="button" value="5" onclick="document.myCalculator.ans.value+='5'">
+            <input type="button" value="6" onclick="document.myCalculator.ans.value+='6'">
+            <input type="button" value="-" class="operation" onclick="document.myCalculator.ans.value+='-'">
 
-            <input type="button" value="1">
-            <input type="button" value="2">
-            <input type="button" value="3">
-            <input type="button" value="X">
+            <input type="button" value="1" onclick="document.myCalculator.ans.value+='1'">
+            <input type="button" value="2" onclick="document.myCalculator.ans.value+='2'">
+            <input type="button" value="3" onclick="document.myCalculator.ans.value+='3'">
+            <input type="button" value="X" class="operation" onclick="document.myCalculator.ans.value+='*'">
 
-            <input type="button" value="0">
-            <input type="button" value="C">
-            <input type="button" value="=">
-            <input type="button" value="/">
+            <input type="button" value="0" onclick="document.myCalculator.ans.value+='0'">
+            <input type="reset" value="Del">
+            <input type="button" value="=" onclick="document.myCalculator.ans.value=eval(document.myCalculator.ans.value)">
+            <input type="button" value="/" class="operation" onclick="document.myCalculator.ans.value+='/'">
 
         </form>
     </div>
+</div>
 
 <script src="js/file.js"></script>
 </body>
