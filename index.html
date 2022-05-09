@@ -4,42 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://afeld.github.io/emoji-css/emoji.css">
     <title>myCalculator!</title>
 </head>
 <body>
 
-<header class="welcome">
-    <h1 id="text"></h1>
-</header>
+<div class="grid-container">
+    <header class="welcome">
+        <h1 id="text"></h1>
+    </header>
+    
+    <main class="flex-container">
+        <div id="myCalculatorApp">
+            <form class="calculator" name="myCalculator">
+                <input type="textfield" name="ans" value="" autocomplete="off" readonly>
+    
+                <input type="button" value="7" onclick="document.myCalculator.ans.value+='7'">
+                <input type="button" value="8" onclick="document.myCalculator.ans.value+='8'">
+                <input type="button" value="9" onclick="document.myCalculator.ans.value+='9'">
+                <input type="button" value="+" class="operation" onclick="document.myCalculator.ans.value+='+'">
+    
+                <input type="button" value="4" onclick="document.myCalculator.ans.value+='4'">
+                <input type="button" value="5" onclick="document.myCalculator.ans.value+='5'">
+                <input type="button" value="6" onclick="document.myCalculator.ans.value+='6'">
+                <input type="button" value="-" class="operation" onclick="document.myCalculator.ans.value+='-'">
+    
+                <input type="button" value="1" onclick="document.myCalculator.ans.value+='1'">
+                <input type="button" value="2" onclick="document.myCalculator.ans.value+='2'">
+                <input type="button" value="3" onclick="document.myCalculator.ans.value+='3'">
+                <input type="button" value="X" class="operation" onclick="document.myCalculator.ans.value+='*'">
+    
+                <input type="button" value="0" onclick="document.myCalculator.ans.value+='0'">
+                <input type="reset" value="Del">
+                <input type="button" value="=" onclick="document.myCalculator.ans.value=eval(document.myCalculator.ans.value)">
+                <input type="button" value="/" class="operation" onclick="document.myCalculator.ans.value+='/'">
+    
+            </form>
+        </div>
+    </main>
 
-<div class="flex-container">
-    <div id="myCalculatorApp">
-        <form class="calculator" name="myCalculator">
-            <input type="textfield" name="ans" value="" autocomplete="off" readonly>
-
-            <input type="button" value="7" onclick="document.myCalculator.ans.value+='7'">
-            <input type="button" value="8" onclick="document.myCalculator.ans.value+='8'">
-            <input type="button" value="9" onclick="document.myCalculator.ans.value+='9'">
-            <input type="button" value="+" class="operation" onclick="document.myCalculator.ans.value+='+'">
-
-            <input type="button" value="4" onclick="document.myCalculator.ans.value+='4'">
-            <input type="button" value="5" onclick="document.myCalculator.ans.value+='5'">
-            <input type="button" value="6" onclick="document.myCalculator.ans.value+='6'">
-            <input type="button" value="-" class="operation" onclick="document.myCalculator.ans.value+='-'">
-
-            <input type="button" value="1" onclick="document.myCalculator.ans.value+='1'">
-            <input type="button" value="2" onclick="document.myCalculator.ans.value+='2'">
-            <input type="button" value="3" onclick="document.myCalculator.ans.value+='3'">
-            <input type="button" value="X" class="operation" onclick="document.myCalculator.ans.value+='*'">
-
-            <input type="button" value="0" onclick="document.myCalculator.ans.value+='0'">
-            <input type="reset" value="Del">
-            <input type="button" value="=" onclick="document.myCalculator.ans.value=eval(document.myCalculator.ans.value)">
-            <input type="button" value="/" class="operation" onclick="document.myCalculator.ans.value+='/'">
-
-        </form>
-    </div>
+    <footer class="goodbye">
+        <h2>¡Thank you for visit my portfolio! 
+        <i class="em em-hearts" aria-role="presentation" aria-label="BLACK HEART SUIT"></i></h2>
+        <div class="social">
+            <a href="https://github.com/tomdvazq"><i class="fa-brands fa-github-square"></i></a>
+            <a href="https://www.linkedin.com/in/tom%C3%A1s-vazquez-980a7717b/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </footer>
 </div>
 
 <script src="js/file.js"></script>

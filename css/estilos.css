@@ -1,6 +1,18 @@
+/* MEDIA QUERIES */
+span {
+  animation: blinker 1s linear infinite; }
+
+@keyframes blinker {
+  50% {
+    opacity: 0; } }
+
 @font-face {
   font-family: Consola;
   src: url(../../fonts/Inconsolata-VariableFont_wdth\,wght.ttf); }
+
+@font-face {
+  font-family: Roboto;
+  src: url(../../fonts/Roboto-Thin.ttf); }
 
 * {
   margin: 0;
@@ -14,17 +26,29 @@ body {
   background-size: cover; }
 
 .welcome {
+  grid-area: header;
+  grid-column: 3;
+  grid-row: 1;
   display: flex;
   justify-content: center;
   margin: 50px 0px; }
-  .welcome #mensaje {
-    color: white; }
+  .welcome #text {
+    color: white;
+    font-size: 35px; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 500px repeat(2, 1fr);
+  grid-template-rows: 150px 1fr 80px; }
 
 .flex-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; }
+  height: 100vh;
+  grid-area: main;
+  grid-column: 3;
+  grid-row: 2; }
 
 #myCalculatorApp {
   grid-row: 3;
@@ -72,3 +96,48 @@ body {
 form .operation {
   background-color: #eea318;
   font-weight: bolder; }
+
+.goodbye {
+  grid-area: footer;
+  background-color: black;
+  color: white;
+  grid-column: 1/6;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 500px repeat(2, 1fr);
+  grid-row: 1fr; }
+  .goodbye h2 {
+    grid-area: h2;
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto; }
+  .goodbye a {
+    text-decoration: none;
+    color: white; }
+  .goodbye .social {
+    font-size: 50px;
+    display: flex;
+    margin: 0px 10px;
+    justify-content: flex-start;
+    align-items: center; }
+  .goodbye i {
+    margin: 0px 5px; }
+
+@media screen and (max-width: 720px) {
+  .goodbye {
+    display: flex;
+    justify-content: space-between; }
+    .goodbye h2 {
+      font-size: 25px;
+      margin: 0px 10px; }
+    .goodbye .social {
+      font-size: 35px; } }
+
+@media screen and (max-width: 520px) {
+  .goodbye {
+    display: flex; }
+    .goodbye h2 {
+      font-size: 20px; } }

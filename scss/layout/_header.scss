@@ -1,8 +1,12 @@
 .welcome{
+    grid-area: header;
+    grid-column: 3;
+    grid-row: 1;
     display: flex;
     justify-content: center;
     margin: 50px 0px;
-    #mensaje{
+    #text{
         color: white;
+        font-size:35px;
     }
 }

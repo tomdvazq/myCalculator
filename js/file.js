@@ -1,12 +1,12 @@
-let i = 0;
-let text = ">bienvenido a myCalculator!";
+let messageArray = ["> welcome to myCalculator!"];
+let textPosition = 0;
+let speed = 100;
 
-function typing(){
-    if(i < text.length){
-        document.getElementById("text").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing,70);
-    }
+typeWriter = () => {
+    document.querySelector("#text").innerHTML = messageArray[0].substring(0, textPosition) + "<span>\u25ae</span>";
+
+    if(textPosition++ != messageArray[0].lenght)
+        setTimeout(typeWriter, speed);
 }
 
-typing();
+window.addEventListener("load", typeWriter);
