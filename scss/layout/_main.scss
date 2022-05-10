@@ -1,28 +1,20 @@
-.grid-container{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) 500px repeat(2, 1fr);
-    grid-template-rows: 150px 1fr 80px;
-}
 
 .flex-container{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    @include grid-childs(main, 3, 2, 0);
+    @include grid-childs(main, 3, 2);
 }
 
 #myCalculatorApp{
-    @include grid-childs(none, 3, 3, 0);
+    @include grid-childs(none, 3, 3);
     @include default(450px, 320px, 4px solid black);
     border-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
         form{
-            @include default(100%, 100%, none)
-            background-color: map-get($color, calculator);
-            background-image: map-get($color, background);
-            background-attachment: fixed;
-            background-size: cover;
+            @include default(100%, 100%, none);
+            @include background();
             border-radius: 10px;
         }
         input[type=textfield]{
