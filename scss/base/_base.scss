@@ -1,6 +1,7 @@
 body{
     background-color: #330000;
-    background-image: $background;
     background-attachment: fixed;
     background-size: cover;
+    background: map-get($color, background);
+    background-repeat: repeat;
 }

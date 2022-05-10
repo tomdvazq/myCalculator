@@ -1,7 +1,5 @@
 .welcome{
-    grid-area: header;
-    grid-column: 3;
-    grid-row: 1;
+    @include grid-childs(header, 3, 1, 0)
     display: flex;
     justify-content: center;
     margin: 50px 0px;

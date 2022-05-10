@@ -9,41 +9,33 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    grid-area: main;
-    grid-column: 3;
-    grid-row: 2;
+    @include grid-childs(main, 3, 2, 0);
 }
 
 #myCalculatorApp{
-    grid-row: 3;
-    grid-column: 3;
-    height: 450px;
-    width: 320px;
-    border: 4px solid black;
+    @include grid-childs(none, 3, 3, 0);
+    @include default(450px, 320px, 4px solid black);
     border-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
         form{
-            height: 100%;
-            width: 100%;
+            @include default(100%, 100%, none)
             background-color: map-get($color, calculator);
-            background-image: $background;
+            background-image: map-get($color, background);
             background-attachment: fixed;
             background-size: cover;
             border-radius: 10px;
         }
         input[type=textfield]{
-            height: 25%;
-            width: 100%;
+            background: map-get($color, calculatorDisplay);
+            @include colorCalculator(numberDisplay);
+            @include default(25%, 100%, none);
             cursor: default;
             font-family: 'Consola', sans-serif;
-            background: map-get($color, calculatorDisplay);
-            color: map-get($color, numbersDisplay);
             padding: 15px;
             text-align: right;
             margin: 20px 0px;
             font-size: 50px;
             font-weight: bold;
-            border: 0;
             outline: none;
         }
         input[type=button], input[type=reset]{
@@ -63,7 +55,7 @@
 
 form{
     .operation{
-        background-color: map-get($color, operation);
         font-weight: bolder;
+        @include colorCalculator(operation)
     }
 }
