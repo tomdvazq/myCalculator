@@ -1,10 +1,8 @@
 .goodbye{
-    grid-area: footer;
+    @include grid-childs(footer, span 6, 3);
+    @include grid-footer(repeat(2, 1fr) 500px repeat(2, 1fr), 1fr, flex, space-between);
     background-color: black;
     color: white;
-    grid-column: 1/6;
-    grid-row: 3;
-    @include grid-footer(repeat(2, 1fr) 500px repeat(2, 1fr), 1fr, flex, space-between);
         h2{
             @include grid-childs(h2, 3, 1);
             display: flex;
